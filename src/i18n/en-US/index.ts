@@ -1,0 +1,26 @@
+// This is just an example,
+// so you can safely delete all default props below
+
+export default {
+  failed: 'Action failed',
+  success: 'Action was successful',
+  dayOffManager: 'Dayoff Manager',
+  settings: 'Settings',
+  changeSettings: 'Change Settings',
+  myUsage: 'My Usage',
+  extraWork: 'Extra Work',
+  projects: 'Projects',
+  usedAt: 'Used at',
+  amount: 'Amount',
+  availableAmount: 'Available',
+  usedAmount: 'Used',
+  totalAmount: 'Total',
+  useNewDayoff: 'Use New Dayoff',
+  useNewDayoffDesc: 'Select Date you want to use new Dayoff on.',
+  submit: 'Submit',
+  cancel: 'Cancel',
+  day: 'Day',
+  editProjectInfo: 'Edit Project Info',
+  editProjectInfoDesc: 'Select the started date of your project.',
+  startedAt: 'startedAt',
+};
