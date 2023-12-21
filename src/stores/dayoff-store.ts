@@ -1,8 +1,10 @@
 import { defineStore } from 'pinia';
 import { date, uid } from 'quasar';
 import { Dayoff, DayoffItem, ExtraWork, ExtraWorkItem } from './model';
+import { User } from 'firebase/auth';
 
 type State = {
+  user?: User;
   usedItems: {
     total: number;
     rows: DayoffItem[];
