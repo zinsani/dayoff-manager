@@ -19,7 +19,7 @@
 import { useI18n } from 'vue-i18n';
 import { reactive } from 'vue';
 import { useQuasar } from 'quasar';
-import { useDayoffStore } from 'src/stores/dayoff-store';
+import { useDayOffStore } from 'src/stores/day-off-store';
 import EditProjectDialog from './EditProjectDialog.vue';
 const { t } = useI18n();
 const text = reactive({
@@ -27,7 +27,7 @@ const text = reactive({
   startedAt: t('startedAt'),
 });
 
-const store = useDayoffStore();
+const store = useDayOffStore();
 const $q = useQuasar();
 function onEdit() {
   $q.dialog({

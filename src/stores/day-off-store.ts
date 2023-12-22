@@ -4,7 +4,7 @@ import { Dayoff, DayoffItem, ExtraWork, ExtraWorkItem } from './model';
 import { User } from 'firebase/auth';
 
 type State = {
-  user?: User;
+  user: User | undefined;
   usedItems: {
     total: number;
     rows: DayoffItem[];
@@ -17,8 +17,9 @@ type State = {
   projectStartedAt: Date;
 };
 
-export const useDayoffStore = defineStore('dayoff', {
+export const useDayOffStore = defineStore('day-off', {
   state: (): State => ({
+    user: undefined,
     usedItems: {
       total: 0,
       rows: [],
@@ -57,7 +58,7 @@ export const useDayoffStore = defineStore('dayoff', {
       this.usedItems.rows.push({
         ...payload,
         id: uid(),
-        createdAt: new Date(),
+        createdAt: new Date().toISOString(),
         author: 0,
       });
       this.usedItems.total = this.usedItems.rows.length;
@@ -66,11 +67,17 @@ export const useDayoffStore = defineStore('dayoff', {
       this.extraWorkItems.rows.push({
         ...payload,
         id: uid(),
-        createdAt: new Date(),
+        createdAt: new Date().toISOString(),
         author: 0,
       });
 
       this.extraWorkItems.total = this.extraWorkItems.rows.length;
+    },
+    setUser(user: User) {
+      this.user = user;
+    },
+    logout() {
+      this.user = undefined;
     },
   },
   persist: { enabled: true },

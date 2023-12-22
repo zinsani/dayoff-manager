@@ -34,7 +34,7 @@
 import { useDialogPluginComponent, date } from 'quasar';
 import { useI18n } from 'vue-i18n';
 import { ref, reactive } from 'vue';
-import { useDayoffStore } from 'src/stores/dayoff-store';
+import { useDayOffStore } from 'src/stores/day-off-store';
 
 const { dialogRef, onDialogHide, onDialogOK } = useDialogPluginComponent();
 const { t } = useI18n();
@@ -46,7 +46,7 @@ const text = reactive({
   startedAt: t('startedAt'),
 });
 
-const store = useDayoffStore();
+const store = useDayOffStore();
 const dateStr = date.formatDate(store.projectStartedAt, 'YYYY-MM-DD');
 const startedAt = ref(dateStr);
 

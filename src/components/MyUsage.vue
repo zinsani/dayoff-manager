@@ -47,7 +47,7 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
 import { reactive, computed } from 'vue';
-import { useDayoffStore } from 'src/stores/dayoff-store';
+import { useDayOffStore } from 'src/stores/day-off-store';
 import { QTableProps, useQuasar, date } from 'quasar';
 import AddNewUsageDialog from './AddNewUsageDialog.vue';
 import { Dayoff } from 'src/stores/model';
@@ -60,7 +60,7 @@ const text = reactive({
   day: t('day'),
 });
 
-const store = useDayoffStore();
+const store = useDayOffStore();
 const columns = computed<QTableProps['columns']>(() => [
   {
     name: 'usedAt',
