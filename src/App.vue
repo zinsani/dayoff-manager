@@ -34,9 +34,9 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+const auth = getAuth();
+const isLoadingAuthState = ref(true);
 onMounted(() => {
-  const auth = getAuth();
-  const isLoadingAuthState = ref(true);
   onAuthStateChanged(auth, (user) => {
     console.log('onAuthStateChanged', user);
     isLoadingAuthState.value = false;
